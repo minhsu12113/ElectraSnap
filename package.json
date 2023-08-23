@@ -2,7 +2,7 @@
   "name": "electrasnap",
   "version": "1.0.0",
   "description": "this is final project CS50",
-  "main": "main.js",
+  "main": "./src/main.js",
   "scripts": {
     "start": "electron ."
   },

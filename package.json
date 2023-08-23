@@ -1,0 +1,28 @@
+{
+  "name": "electrasnap",
+  "version": "1.0.0",
+  "description": "this is final project CS50",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "'https://github.com/minhsu12113/ElectraSnap'"
+  },
+  "keywords": [
+    "snapshot",
+    "app"
+  ],
+  "author": "MinhSu (Justin)",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^26.0.0"
+  },
+  "dependencies": {
+    "fomantic-ui": "^2.9.3-beta.63",
+    "fomantic-ui-css": "^2.9.2",
+    "gulp": "^4.0.2",
+    "node-fetch": "^2.6.7"
+  }
+}

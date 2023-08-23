@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src
+    'self'; script-src 'self'">
+    <link rel="stylesheet" type="text/css" href="../../semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>
+    <title>ElectraSnap</title>   
+  </head>
+
+  <body>
+
+    <!-- Main container -->
+   <section class="container">
+
+    <!-- Window Bar -->
+    <section class="container-windowbar">
+      <i id="btn-minimize" class="window minimize outline icon container-windowbar-btn-minimize"></i>
+      <i id="btn-close" class="close icon container-windowbar-btn-close"></i>
+    </section>
+
+    <!-- App Logo -->
+    <img src="../assets/icon-app.png" alt="">
+
+    <!-- Button Snapshot -->
+    <button class="ui teal button container-item">
+      <i class="instagram icon"></i>
+      Snapshot
+    </button>
+
+    <!-- Button History -->
+    <button class="ui brown button container-item">
+      <i class="history icon"></i>
+      Historys
+    </button>
+
+   </section>   
+   <script src="../controller/renderer.js"></script>
+  </body>
+</html>

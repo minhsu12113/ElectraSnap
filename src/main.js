@@ -5,7 +5,7 @@ let mainWindow;
 const createWindow = () => {
     mainWindow = new BrowserWindow({
       width: 478,
-      height: 329, 
+      height: 279, 
       webPreferences: {
         preload: path.join(__dirname,'preload.js')
       },
@@ -13,7 +13,7 @@ const createWindow = () => {
       resizable: false,
       autoHideMenuBar: true,
       transparent: true,
-      icon: path.join(__dirname,'assets', 'icon-bar.png'),
+      icon: path.join(__dirname,'assets', 'elec-icon.ico'),
     })
     mainWindow.loadFile('./src/views/index.html');
     //mainWindow.webContents.openDevTools()

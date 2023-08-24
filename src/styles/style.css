@@ -50,3 +50,7 @@ body {
 .container-windowbar-btn-close{
     color: #da5016; 
 }
+
+.container-item{
+    -webkit-app-region: no-drag;
+}

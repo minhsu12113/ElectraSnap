@@ -13,7 +13,7 @@ const createWindow = () => {
       resizable: false,
       autoHideMenuBar: true,
       transparent: true,
-      icon: path.join(__dirname,'assets', 'icon-bar.png'),
+      icon: path.join(__dirname,'assets', 'elec-icon.ico'),
     })
     mainWindow.loadFile('./src/views/index.html');
     //mainWindow.webContents.openDevTools()

@@ -20,6 +20,7 @@
     "electron": "^26.0.0"
   },
   "dependencies": {
+    "cropperjs": "^1.5.13",
     "desktop-screenshot": "^0.1.1",
     "fomantic-ui": "^2.9.3-beta.63",
     "fomantic-ui-css": "^2.9.2",

@@ -1,6 +1,8 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow, ipcMain,Notification  } = require('electron')
 const path = require('path') 
 const screenshot = require('desktop-screenshot')
+const nativeImage = require('electron').nativeImage
+const { clipboard } = require('electron')
 
 let mainWindow;
 let historyWindow;
@@ -8,8 +10,8 @@ let snapWindow;
 
 const createWindow = () => {
     mainWindow = new BrowserWindow({
-      width: 478,
-      height: 279, 
+      width: 378,
+      height: 179, 
       webPreferences: {
         preload: path.join(__dirname,'preload.js')
       },
@@ -20,7 +22,6 @@ const createWindow = () => {
       icon: path.join(__dirname,'assets', 'elec-icon.ico'),
     })
     mainWindow.loadFile('./src/views/index.html');
-    //mainWindow.webContents.openDevTools()
 }
 
 app.whenReady().then(() => {
@@ -39,6 +40,19 @@ ipcMain.on('mimizedWindow', () => {
 ipcMain.on('appExit', () => {
     app.quit();
 });
+
+const NOTIFICATION_TITLE = 'ElectraSnap'
+const NOTIFICATION_BODY = 'The image has been copied to the clipboard'
+
+function showNotification () {
+  new Notification(
+    { 
+        title: NOTIFICATION_TITLE, 
+        body: NOTIFICATION_BODY,
+        icon: path.join(__dirname,'assets', 'elec-icon.ico'),
+    }).show()
+}
+
 
 function electSnap(){
     return new Promise(function (resolve, reject) {
@@ -79,7 +93,6 @@ ipcMain.on('open-snapshot-window', (event, imgpath) => {
     snapWindow.loadFile('./src/views/snapshot-window.html');
     snapWindow.webContents.send('show-img', imgpath)
     //snapWindow.openDevTools();
-    //mainWindow.s
 })
 
 ipcMain.on('openWindowHis', () => {
@@ -92,4 +105,12 @@ ipcMain.on('openWindowHis', () => {
     })
     historyWindow.loadFile('./src/views/history-window.html');
     mainWindow.hide();
+});
+
+ipcMain.on('receive-base64-img', (event,data) => {
+   var img = nativeImage.createFromDataURL(data);
+   clipboard.writeImage(img, 'png');
+   snapWindow.close();
+   showNotification();
+   mainWindow.show();
 });

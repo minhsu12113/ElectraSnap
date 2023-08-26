@@ -6,5 +6,6 @@ contextBridge.exposeInMainWorld('electronAPI', {
   snapshot: () => ipcRenderer.invoke('snapshot'),
   openSnapshotWindow: (imgPath) => ipcRenderer.send('open-snapshot-window', imgPath),
   openWindowHis: () => ipcRenderer.send('openWindowHis'),
-  showImg: (callback) => ipcRenderer.on('show-img', callback)
+  showImg: (callback) => ipcRenderer.on('show-img', callback),
+  receiveBase64Img: (dataBase64) => ipcRenderer.send('receive-base64-img',dataBase64),
 })

@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,
-    initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../styles/snapshot-window.css">
+    initial-scale=1.0">   
+    <link rel="stylesheet" type="text/css" href="../styles/snapshot-window.css"> 
+    <link rel="stylesheet" type="text/css" href="../../node_modules/cropperjs/dist/cropper.min.css">
     <title>Document</title>
 </head>
 <body>
-    <img id="img" src="" alt="">    
-    <script src="../controller/snapshot-window.js"></script>
+    <img id="img" src="../screenshot.png" alt="">    
+    <section id="overlay"></section>
+    <script src="../../node_modules/cropperjs/dist/cropper.min.js"></script>
+    <script src="../controller/snapshot-window.js"></script>   
 </body>
 </html>
+

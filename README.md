@@ -1,7 +1,5 @@
 # ElectraSnap
 This is final project of CS50
-# ElectraSnap
-This is final project of CS50
 
 Electra Snap
 #### Video Demo:  https://youtu.be/ARqSgYDTVXo
